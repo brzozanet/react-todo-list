@@ -10,8 +10,8 @@
   },
   "scripts": {
     "reset": "cp \"./back-end/backup/original_db.json\" ./back-end/db.json",
-    "front-end": "npm start --workspace=front-end",
-    "back-end": "npm start --workspace=back-end",
+    "front-end": "npm run dev --workspace=front-end",
+    "back-end": "npm run dev --workspace=back-end",
     "dev": "npm-run-all --parallel front-end back-end"
   }
 }
