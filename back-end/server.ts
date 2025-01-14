@@ -60,6 +60,7 @@ app.post("/api/users", async (req: Request, res: Response) => {
   res.json({ user });
 });
 
+// NOTE: add type
 app.delete("/api/users/:id", async (req, res) => {
   const id = Number(req.params.id);
 
@@ -76,6 +77,27 @@ app.delete("/api/users/:id", async (req, res) => {
 });
 
 // edit
+// NOTE: add type
+app.patch("/api/users/:id", async (req, res) => {
+  const id = Number(req.params.id);
+  const name = req.body.name;
+  const email = req.body.email;
+
+  try {
+    const updateUser = await prisma.user.update({
+      where: {
+        id,
+      },
+      data: {
+        name,
+        email,
+      },
+    });
+    res.json({ updateUser });
+  } catch (error) {
+    res.json({ error });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
