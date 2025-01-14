@@ -60,7 +60,21 @@ app.post("/api/users", async (req: Request, res: Response) => {
   res.json({ user });
 });
 
-// delete /api/users/:id
+app.delete("/api/users/:id", async (req, res) => {
+  const id = Number(req.params.id);
+
+  try {
+    const deleteUser = await prisma.user.delete({
+      where: {
+        id,
+      },
+    });
+    res.json({ deleteUser });
+  } catch (error) {
+    res.json({ error });
+  }
+});
+
 // edit
 
 app.listen(PORT, () => {
