@@ -1,0 +1,68 @@
+import express, { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
+
+const app = express();
+const PORT = 3000;
+
+// middleware
+app.use(express.json());
+
+// prisma start
+
+const prisma = new PrismaClient();
+
+async function main() {
+  // const user = await prisma.user.create({
+  //   data: {
+  //     name: "Alice",
+  //     email: "alice@prisma.io",
+  //   },
+  // });
+  // console.log(user);
+}
+
+main()
+  .then(async () => {
+    await prisma.$disconnect();
+  })
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
+
+app.get("/api/users", async (req: Request, res: Response) => {
+  const users = await prisma.user.findMany();
+  // res.json({ users: users });
+  res.json({ users });
+});
+
+app.get("/api/users/:id", async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const user = await prisma.user.findUnique({
+    where: {
+      id,
+    },
+  });
+  res.json({ user });
+});
+
+app.post("/api/users", async (req: Request, res: Response) => {
+  const name = req.body.name;
+  const email = req.body.email;
+
+  const user = await prisma.user.create({
+    data: {
+      name,
+      email,
+    },
+  });
+  res.json({ user });
+});
+
+// delete /api/users/:id
+// edit
+
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+});
