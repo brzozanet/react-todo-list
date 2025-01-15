@@ -31,25 +31,25 @@ main()
     process.exit(1);
   });
 
-app.get("/api/users", async (req: Request, res: Response) => {
+app.get("/api/users", async (request: Request, response: Response) => {
   const users = await prisma.user.findMany();
   // res.json({ users: users });
-  res.json({ users });
+  response.json({ users });
 });
 
-app.get("/api/users/:id", async (req: Request, res: Response) => {
-  const id = Number(req.params.id);
+app.get("/api/users/:id", async (request: Request, response: Response) => {
+  const id = Number(request.params.id);
   const user = await prisma.user.findUnique({
     where: {
       id,
     },
   });
-  res.json({ user });
+  response.json({ user });
 });
 
-app.post("/api/users", async (req: Request, res: Response) => {
-  const name = req.body.name;
-  const email = req.body.email;
+app.post("/api/users", async (request: Request, response: Response) => {
+  const name = request.body.name;
+  const email = request.body.email;
 
   const user = await prisma.user.create({
     data: {
@@ -57,12 +57,12 @@ app.post("/api/users", async (req: Request, res: Response) => {
       email,
     },
   });
-  res.json({ user });
+  response.json({ user });
 });
 
 // NOTE: add type
-app.delete("/api/users/:id", async (req, res) => {
-  const id = Number(req.params.id);
+app.delete("/api/users/:id", async (request, response) => {
+  const id = Number(request.params.id);
 
   try {
     const deleteUser = await prisma.user.delete({
@@ -70,18 +70,17 @@ app.delete("/api/users/:id", async (req, res) => {
         id,
       },
     });
-    res.json({ deleteUser });
+    response.json({ deleteUser });
   } catch (error) {
-    res.json({ error });
+    response.json({ error });
   }
 });
 
-// edit
 // NOTE: add type
-app.patch("/api/users/:id", async (req, res) => {
-  const id = Number(req.params.id);
-  const name = req.body.name;
-  const email = req.body.email;
+app.patch("/api/users/:id", async (request, response) => {
+  const id = Number(request.params.id);
+  const name = request.body.name;
+  const email = request.body.email;
 
   try {
     const updateUser = await prisma.user.update({
@@ -93,9 +92,9 @@ app.patch("/api/users/:id", async (req, res) => {
         email,
       },
     });
-    res.json({ updateUser });
+    response.json({ updateUser });
   } catch (error) {
-    res.json({ error });
+    response.json({ error });
   }
 });
 
