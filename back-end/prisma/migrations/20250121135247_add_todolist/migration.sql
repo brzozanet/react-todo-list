@@ -1,0 +1,15 @@
+-- CreateTable
+CREATE TABLE "TodoList" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "ownerId" INTEGER NOT NULL,
+    CONSTRAINT "TodoList_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Task" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "ownerId" INTEGER NOT NULL,
+    "todolistId" INTEGER NOT NULL,
+    CONSTRAINT "Task_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "Task_todolistId_fkey" FOREIGN KEY ("todolistId") REFERENCES "TodoList" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

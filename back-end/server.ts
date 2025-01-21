@@ -57,7 +57,14 @@ app.post("/api/users", async (request: Request, response: Response) => {
       email,
     },
   });
-  response.json({ user });
+
+  const todoList = await prisma.todoList.create({
+    data: {
+      ownerId: user.id,
+    },
+  });
+
+  response.json({ user, todoList });
 });
 
 // NOTE: add type

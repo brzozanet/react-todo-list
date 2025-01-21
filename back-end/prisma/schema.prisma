@@ -11,10 +11,27 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  posts Post[]
+  id       Int        @id @default(autoincrement())
+  email    String     @unique
+  name     String?
+  posts    Post[]
+  todoList TodoList[]
+  tasks    Task[]
+}
+
+model TodoList {
+  id      Int    @id @default(autoincrement())
+  owner   User   @relation(fields: [ownerId], references: [id])
+  ownerId Int
+  tasks   Task[]
+}
+
+model Task {
+  id         Int      @id @default(autoincrement())
+  owner      User     @relation(fields: [ownerId], references: [id])
+  ownerId    Int
+  todolist   TodoList @relation(fields: [todolistId], references: [id])
+  todolistId Int
 }
 
 model Post {
