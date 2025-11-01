@@ -74,21 +74,21 @@ Aplikacja wykorzystuje Zustand do zarządzania globalnym stanem zadań. Store za
 - Wyłączanie przycisku "Dodaj" gdy pole jest puste
 - Potwierdzenia przed usunięciem lub oznaczeniem jako zrobione
 
-## 📦 Instalacja
+## 📋 Wymagania
 
-Sklonuj repozytorium:
+Na komputerze musi być zainstalowana LTS-wersja
+[Node.js](https://nodejs.org/en/).
+
+## 🚀 Instalacja
+
+1. **Klonowanie repozytorium**:
 
 ```bash
 git clone https://github.com/brzozanet/react-todo-list.git
-```
-
-Przejdź do katalogu projektu:
-
-```bash
 cd react-todo-list
 ```
 
-Zainstaluj zależności:
+2. **Instalacja zależności**:
 
 ```bash
 npm install
