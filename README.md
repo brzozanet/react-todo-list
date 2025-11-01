@@ -1,6 +1,6 @@
 # 📝 React TODO List
 
-Aplikacja do zarządzania zadaniami (TODO List) stworzona w React z wykorzystaniem Vite. Projekt pozwala na tworzenie, edycję, usuwanie i oznaczanie zadań jako wykonane.
+Aplikacja do zarządzania zadaniami (TODO List) stworzona w React z wykorzystaniem Vite. Projekt pozwala na tworzenie, edycję, usuwanie i oznaczanie zadań jako wykonane. Aplikacja wykorzystuje Zustand do zarządzania globalnym stanem zadań.
 
 ## 🌐 Demo
 
