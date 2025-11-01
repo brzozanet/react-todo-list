@@ -7,7 +7,6 @@ Aplikacja do zarządzania zadaniami (TODO List) stworzona w React z wykorzystani
 Aplikacja jest dostępna online:
 
 - [GitHub Pages](https://brzozanet.github.io/react-todo-list/)
-- [Netlify Demo](https://zrozumiec-react-todo-app.netlify.app/)
 
 ## 📋 Funkcjonalności
 
@@ -77,19 +76,19 @@ Aplikacja wykorzystuje Zustand do zarządzania globalnym stanem zadań. Store za
 
 ## 📦 Instalacja
 
-1. Sklonuj repozytorium:
+Sklonuj repozytorium:
 
 ```bash
 git clone https://github.com/brzozanet/react-todo-list.git
 ```
 
-2. Przejdź do katalogu projektu:
+Przejdź do katalogu projektu:
 
 ```bash
 cd react-todo-list
 ```
 
-3. Zainstaluj zależności:
+Zainstaluj zależności:
 
 ```bash
 npm install
@@ -107,4 +106,4 @@ Aplikacja będzie dostępna pod adresem `http://localhost:5173`
 
 <br>
 
-![Screenshot App](https://raw.githubusercontent.com/brzozanet/project-fashion-shop/main/front-end/src/images/gh-cover-react-shop-online.jpg)
+![Screenshot App](https://raw.githubusercontent.com/brzozanet/project-fashion-shop/main/front-end/src/images/gh-cover-react-todo-list.jpg)
