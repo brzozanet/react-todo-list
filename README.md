@@ -76,8 +76,7 @@ Aplikacja wykorzystuje Zustand do zarządzania globalnym stanem zadań. Store za
 
 ## 📋 Wymagania
 
-Na komputerze musi być zainstalowana LTS-wersja
-[Node.js](https://nodejs.org/en/).
+Na komputerze musi być zainstalowana LTS-wersja [Node.js](https://nodejs.org/en/).
 
 ## 🚀 Instalacja
 
