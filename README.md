@@ -106,4 +106,4 @@ Aplikacja będzie dostępna pod adresem `http://localhost:5173`
 
 <br>
 
-![Screenshot App](https://raw.githubusercontent.com/brzozanet/project-fashion-shop/main/front-end/src/images/gh-cover-react-todo-list.jpg)
+![Screenshot App](https://raw.githubusercontent.com/brzozanet/react-todo-list/refs/heads/main/src/images/gh-cover-react-todo-list.jpg)
